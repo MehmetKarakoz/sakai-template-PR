@@ -6,6 +6,7 @@
     transition: margin-left var(--layout-section-transition-duration);
     left: 0;
     right: 0;
+    top:0;
 }
 
 .layout-main {
@@ -13,11 +14,11 @@
     padding-bottom: 2rem;
 }
 .middleDiv{
-    background-color: #f8f8ff;
+    background-color: #f0f4f8;
     overflow: auto;
     height: calc(100vh - 5rem);
     padding: 2rem;
     border-top-left-radius: 30px;
-    box-shadow: inset 0 3px 4px #0000001a;
+    box-shadow: inset 0 5px 4px #0000001a;
     z-index: 995;
 }

@@ -4,12 +4,14 @@
         width: 1504px;
         margin-left: auto !important;
         margin-right: auto !important;
+    z-index: 996;
     }
 }
 
 @media (min-width: 992px) {
     .layout-wrapper {
         background-color: white;
+        z-index: 996;
         &.layout-overlay {
             .layout-main-container {
                 margin-left: 0;
@@ -44,32 +46,24 @@
         }
     }
 }
-
 @media (max-width: 991px) {
-
     .layout-wrapper {
         background-color: white;
+
         .layout-main-container {
-            /*margin-left: 20rem;*/
-            padding: 5rem;
-            margin-top:5rem;
             border-top-left-radius: 50px;
+            transition: margin-left 0.4s ease, width 0.4s ease;
+            margin-top:5rem;
         }
 
         .layout-sidebar {
             transform: translateX(-100%);
             left: 0;
             top: 5rem;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-right: 1px solid var(--surface-border);
-            transition:
-                transform 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99),
-                left 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
-            box-shadow:
-                0px 3px 5px rgba(0, 0, 0, 0.02),
-                0px 0px 2px rgba(0, 0, 0, 0.05),
-                0px 1px 4px rgba(0, 0, 0, 0.08);
+            overflow: auto;
+            flex: 1;
+            height: 100%;
+            padding: 1rem 1.5rem;
         }
 
         .layout-mask {
@@ -78,20 +72,21 @@
             top: 0;
             left: 0;
             z-index: 998;
-            width: 100%;
-            height: 100%;
         }
 
         &.layout-mobile-active {
             .layout-sidebar {
-                transform: translateX(0);
+                transform: translateX(0); /* Sidebar'ı ekranda göster */
+            }
+
+            .layout-main-container {
+                margin-left: 14rem; /* Sidebar genişliği kadar içerik alanı sağa kayar */
             }
 
             .layout-mask {
-                display: block;
+                display: block; /* Maske görünür yap */
             }
         }
-
-
     }
 }
+

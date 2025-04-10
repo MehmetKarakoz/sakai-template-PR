@@ -11,6 +11,7 @@ import { LayoutService } from '../service/layout.service';
     standalone: true,
     imports: [RouterModule, CommonModule, StyleClassModule, AppConfigurator],
     template: ` <div class="layout-topbar">
+        <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <a class="layout-topbar-logo" routerLink="/">
                 <svg viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +34,7 @@ import { LayoutService } from '../service/layout.service';
                 <span>SAKAI</span>
             </a>
             <button class="layout-menu-button layout-topbar-action" (click)="layoutService.onMenuToggle()">
-                <i class="pi pi-bars"></i>
+                <i class="pi pi-bars" ></i>
             </button>
         </div>
 
@@ -79,7 +80,7 @@ import { LayoutService } from '../service/layout.service';
                 </div>
             </div>
         </div>
-    </div>`
+        </div></div>`
 })
 export class AppTopbar {
     items!: MenuItem[];
